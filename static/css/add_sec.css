@@ -21,7 +21,8 @@ a:hover {
 
 
 .round-box {
-    position: absolute;
+    flex-direction: column;
+    align-items: center;
     max-width: 600px;
     max-height: 1000px;
     background: #d9d9d9;
@@ -29,7 +30,7 @@ a:hover {
     padding: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -51,6 +52,14 @@ a:hover {
     object-fit: contain;
     display: block;
     border-radius: 8px;
+}
+
+.round-box-caption {
+    margin-top: 6px;
+    font-size: 20px;
+    color: black;
+    text-align: left;
+    /* 如果你想左对齐告诉我 */
 }
 
 .modal2 {
@@ -100,6 +109,7 @@ a:hover {
 
 .modal-box {
     background: transparent;
+    flex-direction: column;
     border-radius: 28px;
     padding: 20px;
     width: 50%;
@@ -120,6 +130,20 @@ a:hover {
     justify-content: center;
 }
 
+#modalImageDesc {
+    max-height: 100px;
+    margin-top: 10px;
+    color: #333;
+    text-align: left;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 16px;
+    padding: 2px;
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: "Times New Roman", Times, serif;
+    overflow: auto;
+}
 
 .modal-box img {
     max-width: 100%;
@@ -149,7 +173,6 @@ a:hover {
     color: #333;
     font-family: "Times New Roman", Times, serif;
     overflow: visible;
-
 }
 
 

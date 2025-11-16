@@ -1,0 +1,3 @@
+**<u>With increasing salinity</u>**, the uptake rate of Cu from the water $k_{\mathrm{u}}$ by the organism (*Ruditapes philippinarum*) decreases, while the uptake rate from the sediment $k_{\mathrm{f}}$ increases, **<u>resulting in a net increase in overall Cu accumulation.</u>**
+
+In contrast, as salinity increases, both the uptake rate of Ni from the water  and from the sediment  decrease, **<u>leading to a net decrease in overall Ni accumulation</u>**.

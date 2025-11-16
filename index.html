@@ -9,7 +9,7 @@
     <title id="title">WenZe Xiao's Homepage</title>
 
     <!-- Icon -->
-    <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="static/assets/favicon.png" />
 
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -84,7 +84,143 @@
     <!-- Core JS-->
     <script type="text/javascript" src="static/js/scripts.js"></script>
     <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
+    <style>
+        .mb-3 {
+            position: relative;
+        }
 
+        .carousel {
+            position: unset;
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M11 1L3 8l8 7'/%3e%3c/svg%3e") !important;
+        }
+
+        /* 右箭头（黑色） */
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M5 1l8 7-8 7'/%3e%3c/svg%3e") !important;
+        }
+
+        /* 固定箭头大小 */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 40px !important;
+            height: 40px !important;
+            background-size: 100% !important;
+            /* 保证图标填充 */
+        }
+
+        /* 固定在左右居中位置 */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            /* 垂直居中 */
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+
+        /* 防止图片影响箭头按钮大小 */
+        .carousel-control-prev {
+            left: 0;
+        }
+
+        .carousel-control-next {
+            right: 0;
+        }
+
+        .img-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        /* Hover 图片效果 */
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+
+        /* 提示框 */
+        .hover-tooltip {
+            position: absolute;
+            bottom: 110%;
+            /* 在图片上方 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 20;
+        }
+
+        /* 显示 tooltip */
+        .img-wrapper:hover .hover-tooltip {
+            opacity: 1;
+        }
+
+        /* 小箭头 */
+        .hover-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .canvas-grid {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 80px;
+        }
+
+        .canvas-col {
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-height: auto;
+            height: auto;
+            flex: 1 0 auto;
+        }
+
+        .round-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .round-box img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .round-box-caption {
+            margin-top: 6px;
+            text-align: left;
+            font-size: 18px;
+        }
+    </style>
 
 </head>
 
@@ -108,10 +244,13 @@
                         <a class="nav-link me-lg-3" href="#publications">Publications</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#awards">Selected R feature artworks</a>
+                        <a class="nav-link me-lg-3" href="#research_topic">Research topic</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#Moments">Monents</a>
+                        <a class="nav-link me-lg-3" href="#awards">Model analysis based on R</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="#Moments">Moments</a>
                     </li>
                 </ul>
             </div>
@@ -164,74 +303,352 @@
     </section>
     <!-- Publications  -->
 
-    <!-- Awards -->
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards"
+    <!-- Research topic -->
+    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="research_topic"
         style="padding-top: 1rem;padding-bottom: 1rem;">
         <div class="container px-5">
             <header>
-                <h2 id="awards-subtitle"><i class="bi bi-laptop"></i>&nbsp;Selected R feature artworks</h2>
+                <h2 id="Research-subtitle"><i class="bi bi-journal-text"></i></i>&nbsp;Research topic</h2>
             </header>
-            <div class="main-body" id="awards-md"></div>
+
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <div class="main-body" id="research-brief-md"></div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <div class="main-body" id="research-p0-md"></div>
+                </div>
+            </div>
+            <div class="container">
+
+                <!-- 第一行：左文字 + 右图片 -->
+                <div class="row align-items-center">
+                    <div class="col-md-12 d-flex flex-column align-items-center">
+
+                        <!-- 上方图片（带 hover 提示框） -->
+                        <div class="img-wrapper mb-3" style="max-width: 800px;">
+                            <img src="static/assets/res0-img/img1.png" class="img-fluid fixed-img">
+                            <div class="hover-tooltip">
+                                The model describes that organisms continuously uptake metals from sediment particles
+                                and aqueous solutions. Although the majority of metals are metabolized, the ongoing
+                                uptake still leads to metal accumulation within the organism. Once the metal
+                                concentration in the organism exceeds a threshold, toxicity risk arises,
+                                resulting in organism mortality.
+                            </div>
+                        </div>
+
+                        <!-- 下方文字 -->
+                        <div class="main-body text-start w-100" id="research-p0-c-md">
+                            <!-- 这里放下方的文字内容 -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <h3>Reference</h3>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-start">
+                    <!-- 左侧图片 -->
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <img src="static/assets/res0-img/img2.png" class="img-fluid rounded shadow-sm"
+                            alt="Related image">
+                    </div>
+
+                    <!-- 右侧文字 -->
+                    <div class="col-md-9">
+                        <div class="main-body" id="">
+                            <a class="fw-bold mb-2" href='https://pubs.acs.org/doi/10.1021/acs.est.3c05914'
+                                target='_blank'>Enhancing sediment bioaccumulation predictions: isotopically
+                                modified bioassay and biodynamic modeling for nickel assessment</a>
+                            <div>
+                                Su, Q.; Xiao, W.; Simpson, S. L.; Tan, Q.-G.; Chen, R.; Xie, M
+                            </div>
+                            <a href="static/assets/doc/2023 Su.pdf" target="_blank" class="btn btn-outline-primary">
+                                <i class="bi bi-file-earmark-pdf-fill"></i> View Full Paper (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+
+            <!-- Block 1 -->
+            <!-- 上方单独一行文字 -->
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <div class="main-body" id="research-p1-md"></div>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <!-- 第一行：左文字 + 右图片 -->
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="main-body" id="research-p1-c-md">
+                            <!-- 上部文字 -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="img-wrapper">
+                            <img src="static/assets/res1-img/img1.png" class="img-fluid fixed-img">
+                            <div class="hover-tooltip">
+                                Through short-term exposure experiments combined with a TKTD model, acute-to-chronic
+                                ratios can be predicted, enabling long-term protection of organisms. This
+                                approach can also be applied to various pollutants.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 第二行：左图片 + 右文字 -->
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="img-wrapper">
+                            <img src="static/assets/res1-img/img2.png" class="img-fluid fixed-img" style="">
+                            <div class="hover-tooltip">
+                                The biodynamic model allows for the estimation of the no-effect concentration (NEC) and
+                                the LC50 values at different exposure times.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="main-body" id="research-p1-d-md">
+                            <!-- 下部文字 -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <hr>
+
+            <!-- Block 2 -->
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <div class="main-body" id="research-p2-md"></div>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <!-- 第一行：左文字 + 右图片 -->
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="main-body" id="research-p2-c-md">
+                            <!-- 上部文字 -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="img-wrapper">
+                            <img src="static/assets/res2-img/img1.png" class="img-fluid fixed-img">
+                            <div class="hover-tooltip">
+                                The organisms are pre-exposed to a specific metal isotope. This metal isotope will
+                                be clearly eliminated during the experiment, while the remaining metal isotopes will
+                                accumulate, allowing the distinction between uptake and elimination processes.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 第二行：左图片 + 右文字 -->
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="img-wrapper">
+                            <img src="static/assets/res2-img/img2.png" class="img-fluid fixed-img"
+                                style="max-width: 560px;">
+                            <div class="hover-tooltip">
+                                The model predicted metal bioaccumulation under different salinity conditions and also
+                                distinguished the sources of metal uptake by the organisms, whether from sediment
+                                particles or from the water.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="main-body" id="research-p2-d-md">
+                            <!-- 下部文字 -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
-        <div class="canvas">
-            <div class="round-box" style="top: 50px; left: 100px;" data-codefile="code/LYQ/2025-1/LYQ.r"
-                data-codelang="r" data-text="Related : <a href='https://www.sciencedirect.com/science/article/pii/S0269749125012813' target='_blank'>Liao, Y.; Xiong, H.; Xiao, W.; Liu, J.; Xie, M.; Chen, R.; Tan, Q.-G. Refining marine metal biomonitoring through insights into allometry in green mussels. Environmental pollution. 2025, 383, 126908.</a> <br> 
-                Data: <a href='code/LYQ/2025-1/new_metal.xlsx' download='new metal.xlsx'>new_metal.xlsx</a>">
-                <img src="code/LYQ/2025-1/LYQ.png" alt="1">
+    </section>
+
+
+
+
+    <!-- Awards -->
+    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="awards"
+        style="padding-top: 1rem;padding-bottom: 1rem;">
+        <div class="container px-5">
+            <header>
+                <h2 id="awards-subtitle"><i class="bi bi-laptop"></i>&nbsp;Model analysis based on R</h2>
+            </header>
+            <div class="main-body" id="awards-md"></div>
+        </div>
+        <div class="canvas-grid container px-5">
+
+            <!-- 左列 -->
+            <div class="canvas-col">
+                <h4>Click for details</h4>
+                <div class="round-box" data-codefile="code/LYQ/2025-1/LYQ.r" data-codelang="r" data-text="Related : <a href='https://www.sciencedirect.com/science/article/pii/S0269749125012813' target='_blank'>Liao, Y.; Xiong, H.; Xiao, W.; Liu, J.; Xie, M.; Chen, R.; Tan, Q.-G. Refining marine metal biomonitoring through insights into allometry in green mussels. Environmental pollution. 2025, 383, 126908.</a> <br> 
+                        Data: <a href='code/LYQ/2025-1/new_metal.xlsx' download='new metal.xlsx'>new_metal.xlsx</a>"
+                    data-desc="A linear model (log <i>Y</i> = log <i>a</i> + <i>b</i> · log <i>X</i>) can describe the relationship between <i>Perna
+                            viridis</i> (a bivalve)
+                        size and its metal uptake (either bioaccumulation or uptake rate). As the organism increases in size, the accumulated metal concentration decreases.">
+                    <img src="code/LYQ/2025-1/LYQ.png" alt="1">
+                    <div class="round-box-caption">A linear model can describe the relationship between <i>Perna
+                            viridis</i> (a bivalve)
+                        size and its metal uptake (either bioaccumulation or uptake rate).</div>
+                </div>
+                <div class="round-box" data-codefile="code/XDJ/2024-1/XDJ.r" data-codelang="r"
+                    data-text="Related : <a href='https://pubs.acs.org/doi/10.1021/acs.est.4c08327' target='_blank'>Sediment ballet: unveiling the dynamics of metal bioavailability in sediments following resuspension and reequilibration.</a><br> 
+                        Data: <a href='code/XDJ/2024-1/eq_predict.csv' download='eq_predict.csv'>eq_predict.csv</a>+
+                        <a href='code/XDJ/2024-1/ss_predict.csv' download='ss_predict.csv'>ss_predict.csv</a>+
+                        <a href='code/XDJ/2024-1/eq_predict_tot.rds' download='eq_predict_tot.rds'>eq_predict_tot.rds</a>" data-desc="The TK model, combined with the Monte Carlo method, 
+                    was used to predict metal bioaccumulation in clams under varying bioavailability conditions influenced by different sediment resuspension and reequilibration durations.In (a), solid lines represent model-predicted bioaccumulation curves for different resuspension
+                    durations, with vertical dashed lines indicating the minimum and maximum times required for a 3-fold increase in tissue concentrations. In (b), the
+                    shaded areas indicate the higher-bound and the lower-bound of predicted bioaccumulation curves, solid lines represent mean bioaccumulation
+                    curves, horizontal dashed lines mark a 3-fold increase in baseline tissue concentrations, and vertical dashed lines correspond to the time required for
+                    a 3-fold increase.">
+                    <img src="code/XDJ/2024-1/XDJ.png" alt="3">
+                    <div class="round-box-caption">The TK model, combined with the Monte Carlo method, was used to
+                        predict metal bioaccumulation in clams under varying bioavailability conditions influenced by
+                        different sediment resuspension and reequilibration durations.
+                    </div>
+                </div>
+
+
+                <div class="round-box" data-codefile="code/HHW/2025-1/HHW.r" data-codelang="r" data-text="Related : <a href='https://www.sciencedirect.com/science/article/abs/pii/S0269749125008395' target='_blank'>Wang, N.; Hu, H.; Xiao, W.; Tan, Q.-G.; Chen, R.; Xie, M.; Simpson, S. L. Hydrodynamic perturbations on contaminant behavior in low-permeability sediments: porewater metal dynamics and risk assessment implications. Environmental pollution 2025, 377, 126466.</a> <br> 
+                        Data: <a href='code/HHW/2025-1/Kd_ff.xlsx' download='Kd_ff.xlsx'>Kd_ff.xlsx</a>"
+                    data-desc="Monte Carlo simulation results illustrating the uncertainty in porewater metal concentrations induced by hydrodynamic variability. 
+                    (a) Truncated distributions of fold increase in porewater concentrations (PW Conc.) of Cu, Ni, and Cd across the four experimental phases, reflecting worst-case scenarios. 
+                    (b) Bottom shear stress values generated from the simulated shear stress event record of a coastal site (adapted from (<a href='https://pubs.acs.org/doi/10.1021/es061770z' target='_blank'>Kalnejais et al., 2007</a>)). 
+                    (c) Probability density distribution of bottom shear stresses, representing the likelihood of each shear stress condition corresponding to the experimental phases. 
+                    (d) Resulting uncertainty distributions of Cu, Ni, and Cd porewater concentrations, integrating hydrodynamic variability and metal mobilization responses.">
+                    <img src="code/HHW/2025-1/HHW.png" alt="5">
+                    <div class="round-box-caption">
+                        Monte Carlo simulation results illustrating the uncertainty in porewater metal concentrations
+                        induced by hydrodynamic variability.
+                    </div>
+                </div>
+
+                <div class="round-box" data-codefile="code/XWZ/2025-1-3/XWZ3.r" data-codelang="r" data-text="Related (Unpublished) : <a href='#' target='_blank'>Xiao, W.; Simpson, S. L; Tan, Q.-G.; Xie, M. Mechanistic acute-to-chronic extrapolation through sediment toxicokinetic-toxicodynamic modeling.</a> <br> 
+                        Data: <a href='code/XWZ/2025-1-3/S_new_a&b.xlsx' download='S_new_a&b.xlsx'>S_new_a&b.xlsx</a>+
+                        <a href='code/XWZ/2025-1-3/sed_death.csv' download='sed_death.csv'>sed_death.csv</a>+
+                        <a href='code/XWZ/2025-1-3/sed_mean_death.csv' download='sed_mean_death.csv'>sed_mean_death.csv</a>+
+                        <a href='code/XWZ/2025-1-3/DGT_mean.csv' download='DGT_mean.csv'>DGT_mean.csv</a>" data-desc="Based on the TD model and Monte Carlo simulations (gray lines) for predicting organism survival, 
+                    the model slightly underestimated toxicity to clam survival. 
+                    Parameters <i>C</i><sub>IT</sub>, <i>k</i><sub>e</sub>, and <i>k</i><sub>m</sub> were adjusted for sensitivity analysis, 
+                    with a decrease in <i>C</i><sub>IT</sub> improving overall predictions.">
+                    <img src="code/XWZ/2025-1-3/XWZ3.png" alt="8">
+                    <div class="round-box-caption">
+                        Based on the TD model and Monte Carlo simulations for predicting organism survival, parameters
+                        were adjusted to analyze model sensitivity.
+                    </div>
+                </div>
+
             </div>
 
-            <div class="round-box" style="top: 50px; right: 100px;" data-codefile="code/SQJ/2023-1/SQJ.r"
-                data-codelang=" r"
-                data-text="Related : <a href='https://pubs.acs.org/doi/10.1021/acs.est.3c05914' target='_blank'>Su, Q.; Xiao, W.; Simpson, S. L.; Tan, Q.-G.; Chen, R.; Xie, M. Enhancing sediment bioaccumulation predictions: isotopically modified bioassay and biodynamic modeling for nickel assessment. Environmental Science & Technology. 2023, 57 (48), 19352–19362.</a><br> 
-                Data: <a href='code/SQJ/2023-1/R.P sediment exposure3.xlsx' download='R.P sediment exposure3.xlsx'>R.P sediment exposure3.xlsx</a>+
-                <a href='code/SQJ/2023-1/R.P_tissue metal concentration_µg_g.csv' download='R.P_tissue metal concentration_µg_g.csv'>R.P_tissue metal concentration_µg_g.csv</a>">
-                <img src="code/SQJ/2023-1/SQJ.png" alt="2">
+
+
+            <!-- 右列 -->
+            <div class="canvas-col">
+
+                <div class="round-box" data-codefile="code/SQJ/2023-1/SQJ.r" data-codelang="r"
+                    data-text="Related : <a href='https://pubs.acs.org/doi/10.1021/acs.est.3c05914' target='_blank'>Su, Q.; Xiao, W.; Simpson, S. L.; Tan, Q.-G.; Chen, R.; Xie, M. Enhancing sediment bioaccumulation predictions: isotopically modified bioassay and biodynamic modeling for nickel assessment. Environmental Science & Technology. 2023, 57 (48), 19352–19362.</a><br> 
+                        Data: <a href='code/SQJ/2023-1/R.P sediment exposure3.xlsx' download='R.P sediment exposure3.xlsx'>R.P sediment exposure3.xlsx</a>+
+                        <a href='code/SQJ/2023-1/R.P_tissue metal concentration_µg_g.csv' download='R.P_tissue metal concentration_µg_g.csv'>R.P_tissue metal concentration_µg_g.csv</a>"
+                    data-desc="The TKTD model successfully predicted nickel accumulation in
+                        <i>Ruditapes philippinarum</i>(a bivalve). The uncertainty of the prediction was
+                        represented using Monte Carlo simulations. The solid color points and the error bars
+                        represent the mean and standard deviation of tissue nickel concentrations of four replicate treatments, respectively. The curves are the predicted
+                        tissue nickel concentrations (thin curves, n = 1000; bold black curves: average). The horizontal dot−dash lines indicate three times the background
+                        clam tissue nickel concentration.">
+                    <img src="code/SQJ/2023-1/SQJ.png" alt="2">
+                    <div class="round-box-caption">The TKTD model successfully predicted nickel accumulation in
+                        <i>Ruditapes philippinarum</i>(a bivalve). The uncertainty of the prediction was
+                        represented using Monte Carlo simulations.
+                    </div>
+                </div>
+
+                <div class="round-box" data-codefile="code/MXD/2025-1/MXD.r" data-codelang="r" data-text="Related : <a href='https://pubs.acs.org/doi/10.1021/acs.est.5c04432' target='_blank'>Ma, X.; Xiao, W.; Zhang, Q.; Yu, Z.; Jia, X.; Chen, R.; Xie, M.; Tan, Q.-G. Fast in, faster out: rapid thallium elimination drives low bioaccumulation in coastal gastropods. Environmental Science & Technology. 2025, 59 (30), 15720–15729.</a> <br> 
+                        Data: <a href='code/MXD/2025-1/MXD_kuke.xlsx' download='MXD_kuke.xlsx'>MXD_kuke.xlsx</a>"
+                    data-desc="The linear model (<i>k</i> = <i>a</i> + <i>b</i>·<i>Sal</i>) is commonly used to describe the relationship between salinity and uptake rate. The arrhenius equation (<i>k</i> = <i>a</i>·e^(–<i>E</i>/(<i>R</i>·<i>T</i>))) characterizes the temperature dependence of uptake rate and elimination rate. 
+                    Based on these two formulations, an empirical multiplicative model (<i>k</i> = (<i>a</i> + <i>b</i>·<i>Sal</i>)·e^(–<i>E</i>/(<i>R</i>·<i>T</i>))) was developed to quantify 
+                    the combined effects of salinity and temperature on uptake and elimination rates, and to subsequently calculate the bioconcentration factor (BCF = <i>k</i><sub>u</sub>/<i>k</i><sub>e</sub>).">
+                    <img src="code/MXD/2025-1/MXD.png" alt="4">
+                    <div class="round-box-caption">
+                        The empirical multiplicative model quantified the variation in the bioconcentration factor (BCF)
+                        of
+                        <i>Reishia clavigera</i> (a snail) for thallium under the combined effects of salinity and
+                        temperature.
+                    </div>
+                </div>
+
+                <div class="round-box" data-codefile="code/XWZ/2025-1-2/XWZ2.r" data-codelang="r" data-text="Related (Unpublished) : <a href='#' target='_blank'>Xiao, W.; Simpson, S. L; Tan, Q.-G.; Xie, M. Mechanistic acute-to-chronic extrapolation through sediment toxicokinetic-toxicodynamic modeling.</a> <br> 
+                        Data: <a href='code/XWZ/2025-1-2/clams.xlsx' download='clams.xlsx'>clams.xlsx</a>+
+                        <a href='code/XWZ/2025-1-2/Cint_MC_new_a&b.xlsx' download='Cint_MC_new_a&b.xlsx'>Cint_MC_new_a&b.xlsx</a>+
+                        <a href='code/XWZ/2025-1-2/Cint_eli_a&b.xlsx' download='Cint_eli_a&b.xlsx'>Cint_eli_a&b.xlsx</a>+
+                        <a href='code/XWZ/2025-1-2/DGT_mean.csv' download='DGT_mean.csv'>DGT_mean.csv</a>" data-desc="The TK model combined with the Monte Carlo simulation method was used to predict and validate short-term metal bioaccumulation, 
+                        and Welch’s t-test was applied to analyze the differences between predicted and observed values.
+                        (a) Net Cu accumulation rates across treatments.
+                    (b) Superimposed and TK model predicted tissue Cu concentrations during exposure. The stepwise grey segments show simulated concentrations at 2-day 
+                    intervals (Monte Carlo simulation, n = 1000)
+                    (c) Comparison between predicted and measured tissue concentration at the end of exposure. ">
+                    <img src="code/XWZ/2025-1-2/XWZ2.png" alt="7">
+                    <div class="round-box-caption">The TK model combined with the Monte Carlo simulation method was used
+                        to predict and validate short-term metal bioaccumulation, and Welch’s t-test was applied to
+                        analyze the differences between predicted and observed values.
+                    </div>
+                </div>
+
+                <div class="round-box" data-codefile="code/XWZ/2025-1-1/XWZ1.r" data-codelang="r" data-text="Related (Unpublished) : <a href='#' target='_blank'>Xiao, W.; Simpson, S. L; Tan, Q.-G.; Xie, M. Mechanistic acute-to-chronic extrapolation through sediment toxicokinetic-toxicodynamic modeling.</a> <br> 
+                        Data: <a href='code/XWZ/2025-1-1/ACR.xlsx' download='ACR.xlsx'>ACR.xlsx</a>"
+                    data-desc="The TKTD model can be used to calculate different toxicity endpoints and predict long-term toxicity, thereby enabling the calculation of ACR.
+                     The model can be applied across multiple species, various pollutants, and different environmental conditions.">
+                    <img src="code/XWZ/2025-1-1/XWZ1.png" alt="6">
+                    <div class="round-box-caption">
+                        Based on the TK-TD model, the acute-to-chronic ratio (ACR) was calculated for different
+                        organisms exposed to various pollutants under different environmental conditions.
+                    </div>
+                </div>
+
+                <div class="round-box" data-codefile="code/XHY/2025-1/growth rate_1.r" data-codelang="r" data-text="Related : <a href='https://www.sciencedirect.com/science/article/pii/S0304389425023015' target='_blank'>Xiong, H.; Wang, T.; Cao, X.; Qian, J.; Simpson, S. L.; Chen, R.; Tan, Q.-G.; Xie, M. In situ isotope tracing for metal bioaccumulation in open waters: implications for interpreting biomonitoring data and safe seafood aquaculture. J. Hazard. Mater. 2025, 139385.</a> <br> 
+                        Data: <a href='code/XHY/2025-1/Mussel.xlsx' download='Mussel.xlsx'>Mussel.xlsx</a>"
+                    data-desc="The pattern of body dry weight change varies under different conditions (field and laboratory). 
+                    A piecewise linear regression model was applied to 
+                    describe dry weight changes across different stages and to calculate the growth rate constant g (log <i>g</i> = <i>a</i> + <i>b</i>·log <i>dw</i>).">
+                    <img src="code/XHY/2025-1/XHY.png" alt="9">
+                    <div class="round-box-caption">
+                        A piecewise linear regression model was used to describe changes in dry weight of the two
+                        bivalve species at different culture stages.
+                    </div>
+                </div>
+
             </div>
 
-            <div class="round-box" style="top: 340px; right: 100px;" data-codefile="code/XDJ/2024-1/XDJ.r"
-                data-codelang="r" data-text="Related : <a href='https://pubs.acs.org/doi/10.1021/acs.est.4c08327' target='_blank'>Sediment ballet: unveiling the dynamics of metal bioavailability in sediments following resuspension and reequilibration.</a><br> 
-                Data: <a href='code/XDJ/2024-1/eq_predict.csv' download='eq_predict.csv'>eq_predict.csv</a>+
-                <a href='code/XDJ/2024-1/ss_predict.csv' download='ss_predict.csv'>ss_predict.csv</a>+
-                <a href='code/XDJ/2024-1/eq_predict_tot.rds' download='eq_predict_tot.rds'>eq_predict_tot.rds</a>">
-                <img src="code/XDJ/2024-1/XDJ.png" alt="3">
-            </div>
-            <div class="round-box" style="top: 1790px; left: 100px;" data-codefile="code/MXD/2025-1/MXD.r"
-                data-codelang="r" data-text="Related : <a href='https://pubs.acs.org/doi/10.1021/acs.est.5c04432' target='_blank'>Ma, X.; Xiao, W.; Zhang, Q.; Yu, Z.; Jia, X.; Chen, R.; Xie, M.; Tan, Q.-G. Fast in, faster out: rapid thallium elimination drives low bioaccumulation in coastal gastropods. Environmental Science & Technology. 2025, 59 (30), 15720–15729.</a> <br> 
-                Data: <a href='code/MXD/2025-1/MXD_kuke.xlsx' download='MXD_kuke.xlsx'>MXD_kuke.xlsx</a>">
-                <img src="code/MXD/2025-1/MXD.png" alt="4">
-            </div>
-            <div class="round-box" style="top: 780px; left: 100px;" data-codefile="code/HHW/2025-1/HHW.r"
-                data-codelang="r" data-text="Related : <a href='https://www.sciencedirect.com/science/article/abs/pii/S0269749125008395' target='_blank'>Wang, N.; Hu, H.; Xiao, W.; Tan, Q.-G.; Chen, R.; Xie, M.; Simpson, S. L. Hydrodynamic perturbations on contaminant behavior in low-permeability sediments: porewater metal dynamics and risk assessment implications. Environmental pollution 2025, 377, 126466.</a> <br> 
-                Data: <a href='code/HHW/2025-1/Kd_ff.xlsx' download='Kd_ff.xlsx'>Kd_ff.xlsx</a>">
-                <img src="code/HHW/2025-1/HHW.png" alt="5">
-            </div>
-            <div class="round-box" style="top: 1560px; right: 100px;" data-codefile="code/XWZ/2025-1-1/XWZ1.r"
-                data-codelang="r" data-text="Related (Unpublished) : <a href='#' target='_blank'>Xiao, W.; Simpson, S. L; Tan, Q.-G.; Xie, M. Mechanistic acute-to-chronic extrapolation through sediment toxicokinetic-toxicodynamic modeling.</a> <br> 
-                Data: <a href='code/XWZ/2025-1-1/ACR.xlsx' download='ACR.xlsx'>ACR.xlsx</a>">
-                <img src="code/XWZ/2025-1-1/XWZ1.png" alt="6">
-            </div>
-            <div class="round-box" style="top: 860px; right: 100px;" data-codefile="code/XWZ/2025-1-2/XWZ2.r"
-                data-codelang="r" data-text="Related (Unpublished) : <a href='#' target='_blank'>Xiao, W.; Simpson, S. L; Tan, Q.-G.; Xie, M. Mechanistic acute-to-chronic extrapolation through sediment toxicokinetic-toxicodynamic modeling.</a> <br> 
-                Data: <a href='code/XWZ/2025-1-2/clams.xlsx' download='clams.xlsx'>clams.xlsx</a>+
-                <a href='code/XWZ/2025-1-2/Cint_MC_new_a&b.xlsx' download='Cint_MC_new_a&b.xlsx'>Cint_MC_new_a&b.xlsx</a>+
-                <a href='code/XWZ/2025-1-2/Cint_eli_a&b.xlsx' download='Cint_eli_a&b.xlsx'>Cint_eli_a&b.xlsx</a>+
-                <a href='code/XWZ/2025-1-2/DGT_mean.csv' download='DGT_mean.csv'>DGT_mean.csv</a>">
-                <img src="code/XWZ/2025-1-2/XWZ2.png" alt="7">
-            </div>
-            <div class="round-box" style="top: 1210px; left: 100px;" data-codefile="code/XWZ/2025-1-3/XWZ3.r"
-                data-codelang="r" data-text="Related (Unpublished) : <a href='#' target='_blank'>Xiao, W.; Simpson, S. L; Tan, Q.-G.; Xie, M. Mechanistic acute-to-chronic extrapolation through sediment toxicokinetic-toxicodynamic modeling.</a> <br> 
-                Data: <a href='code/XWZ/2025-1-3/S_new_a&b.xlsx' download='S_new_a&b.xlsx'>S_new_a&b.xlsx</a>+
-                <a href='code/XWZ/2025-1-3/sed_death.csv' download='sed_death.csv'>sed_death.csv</a>+
-                <a href='code/XWZ/2025-1-3/sed_mean_death.csv' download='sed_mean_death.csv'>sed_mean_death.csv</a>+
-                <a href='code/XWZ/2025-1-3/DGT_mean.csv' download='DGT_mean.csv'>DGT_mean.csv</a>">
-                <img src="code/XWZ/2025-1-3/XWZ3.png" alt="8">
-            </div>
-            <div class="round-box" style="top: 1960px; right: 100px;" data-codefile="code/XHY/2025-1/growth rate_1.r"
-                data-codelang="r" data-text="Related : <a href='https://www.sciencedirect.com/science/article/pii/S0304389425023015' target='_blank'>Xiong, H.; Wang, T.; Cao, X.; Qian, J.; Simpson, S. L.; Chen, R.; Tan, Q.-G.; Xie, M. In situ isotope tracing for metal bioaccumulation in open waters: implications for interpreting biomonitoring data and safe seafood aquaculture. J. Hazard. Mater. 2025, 139385.</a> <br> 
-                Data: <a href='code/XHY/2025-1/Mussel.xlsx' download='Mussel.xlsx'>Mussel.xlsx</a>">
-                <img src="code/XHY/2025-1/XHY.png" alt="9">
-            </div>
         </div>
         <div class="modal2" id="modal2">
             <div class="close-btn" id="closeBtn">×</div>
@@ -239,6 +656,7 @@
                 <!-- pic -->
                 <div class="modal-box">
                     <img id="modalImage" src="" alt="">
+                    <div class="modal-image-desc" id="modalImageDesc"></div>
                 </div>
                 <!-- text & code -->
                 <div class="modal-box-1">
@@ -267,7 +685,7 @@
     </div>
 
     <!-- Others -->
-    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="Moments"
+    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="Moments"
         style="padding-top: 1rem;padding-bottom: 1rem;">
         <div class="container px-5">
             <header>
@@ -307,5 +725,28 @@
 </body>
 
 <script type="text/javascript" src="static/js/click.js"></script>
+
+<script>
+    // Block 1 动态文字
+    const carouselP1 = document.getElementById('carouselP1');
+    const p1Text = document.getElementById('research-p1-extra-text');
+
+    carouselP1.addEventListener('slid.bs.carousel', function (event) {
+        const activeItem = event.relatedTarget;
+        const caption = activeItem.getAttribute('data-caption') || '';
+        p1Text.textContent = caption;
+    });
+
+    // Block 2 动态文字
+    const carouselP2 = document.getElementById('carouselP2');
+    const p2Text = document.getElementById('research-p2-extra-text');
+
+    carouselP2.addEventListener('slid.bs.carousel', function (event) {
+        const activeItem = event.relatedTarget;
+        const caption = activeItem.getAttribute('data-caption') || '';
+        p2Text.textContent = caption;
+    });
+</script>
+
 
 </html>

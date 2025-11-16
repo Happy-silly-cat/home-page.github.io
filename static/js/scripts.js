@@ -2,7 +2,9 @@
 
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'home2', 'publications', 'awards']
+const section_names = ['home', 'home2', 'publications', 'research-brief',
+    'research-p0', 'research-p0-c', 'research-p1',
+    , 'research-p1-c', 'research-p1-d', 'awards', 'research-p2', 'research-p2-c', 'research-p2-d']
 
 
 window.addEventListener('DOMContentLoaded', event => {
@@ -47,4 +49,5 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+new bootstrap.Carousel(carousel, { interval: false });
 

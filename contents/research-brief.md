@@ -1,0 +1,3 @@
+### Brief
+
+My research focuses on **<u>metals, sediments, and organisms</u>**. I am particularly interested in the **<u>development and application of biodynamic models</u>** to study **<u>metal bioavailability, biogeochemical behavior, and ecological risks</u>** at sediment-water-organism interfaces. These models enable quantitative predictions from bioaccumulation to toxicity and support environmental risk assessment.
