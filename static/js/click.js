@@ -51,3 +51,23 @@ modal.addEventListener('click', (e) => {
 closeBtn.addEventListener('click', () => {
     modal.classList.remove('show');
 });
+
+// Block 1 动态文字
+const carouselP1 = document.getElementById('carouselP1');
+const p1Text = document.getElementById('research-p1-extra-text');
+
+carouselP1.addEventListener('slid.bs.carousel', function (event) {
+    const activeItem = event.relatedTarget;
+    const caption = activeItem.getAttribute('data-caption') || '';
+    p1Text.textContent = caption;
+});
+
+// Block 2 动态文字
+const carouselP2 = document.getElementById('carouselP2');
+const p2Text = document.getElementById('research-p2-extra-text');
+
+carouselP2.addEventListener('slid.bs.carousel', function (event) {
+    const activeItem = event.relatedTarget;
+    const caption = activeItem.getAttribute('data-caption') || '';
+    p2Text.textContent = caption;
+});

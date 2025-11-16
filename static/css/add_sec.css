@@ -21,8 +21,10 @@ a:hover {
 
 
 .round-box {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     max-width: 600px;
     max-height: 1000px;
     background: #d9d9d9;
@@ -46,6 +48,8 @@ a:hover {
 
 .round-box img {
     max-width: 100%;
+    height: auto;
+    cursor: pointer;
     max-height: 100%;
     height: auto;
     width: auto;
@@ -314,4 +318,130 @@ a:hover {
     100% {
         transform: translateX(-50%);
     }
+}
+
+
+.mb-3 {
+    position: relative;
+}
+
+.carousel {
+    position: unset;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M11 1L3 8l8 7'/%3e%3c/svg%3e") !important;
+}
+
+/* 右箭头（黑色） */
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M5 1l8 7-8 7'/%3e%3c/svg%3e") !important;
+}
+
+/* 固定箭头大小 */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px !important;
+    height: 40px !important;
+    background-size: 100% !important;
+    /* 保证图标填充 */
+}
+
+/* 固定在左右居中位置 */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+/* 防止图片影响箭头按钮大小 */
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.img-wrapper img {
+    width: 100%;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+/* Hover 图片效果 */
+.img-wrapper:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* 提示框 */
+.hover-tooltip {
+    position: absolute;
+    bottom: 110%;
+    /* 在图片上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 20;
+}
+
+/* 显示 tooltip */
+.img-wrapper:hover .hover-tooltip {
+    opacity: 1;
+}
+
+/* 小箭头 */
+.hover-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.85);
+}
+
+.canvas-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 80px;
+}
+
+.canvas-col {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: auto;
+    height: auto;
+    flex: 1 0 auto;
+}
+
+
+.round-box-caption {
+    margin-top: 6px;
+    text-align: left;
+    font-size: 18px;
 }

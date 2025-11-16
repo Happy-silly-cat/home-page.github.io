@@ -84,144 +84,6 @@
     <!-- Core JS-->
     <script type="text/javascript" src="static/js/scripts.js"></script>
     <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
-    <style>
-        .mb-3 {
-            position: relative;
-        }
-
-        .carousel {
-            position: unset;
-        }
-
-        .carousel-control-prev-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M11 1L3 8l8 7'/%3e%3c/svg%3e") !important;
-        }
-
-        /* 右箭头（黑色） */
-        .carousel-control-next-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M5 1l8 7-8 7'/%3e%3c/svg%3e") !important;
-        }
-
-        /* 固定箭头大小 */
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 40px !important;
-            height: 40px !important;
-            background-size: 100% !important;
-            /* 保证图标填充 */
-        }
-
-        /* 固定在左右居中位置 */
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 50px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            /* 垂直居中 */
-            justify-content: center;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-        }
-
-        /* 防止图片影响箭头按钮大小 */
-        .carousel-control-prev {
-            left: 0;
-        }
-
-        .carousel-control-next {
-            right: 0;
-        }
-
-        .img-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-
-        .img-wrapper img {
-            width: 100%;
-            transition: transform 0.3s, filter 0.3s;
-        }
-
-        /* Hover 图片效果 */
-        .img-wrapper:hover img {
-            transform: scale(1.03);
-            filter: brightness(1.1);
-        }
-
-        /* 提示框 */
-        .hover-tooltip {
-            position: absolute;
-            bottom: 110%;
-            /* 在图片上方 */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 500px;
-
-            background: rgba(0, 0, 0, 0.85);
-            color: white;
-            padding: 12px 16px;
-            border-radius: 8px;
-
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-            z-index: 20;
-        }
-
-        /* 显示 tooltip */
-        .img-wrapper:hover .hover-tooltip {
-            opacity: 1;
-        }
-
-        /* 小箭头 */
-        .hover-tooltip::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 8px solid transparent;
-            border-top-color: rgba(0, 0, 0, 0.85);
-        }
-
-        .canvas-grid {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 80px;
-        }
-
-        .canvas-col {
-            width: 360px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            min-height: auto;
-            height: auto;
-            flex: 1 0 auto;
-        }
-
-        .round-box {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .round-box img {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-        }
-
-        .round-box-caption {
-            margin-top: 6px;
-            text-align: left;
-            font-size: 18px;
-        }
-    </style>
-
 </head>
 
 <body id="page-top">
@@ -325,11 +187,11 @@
             </div>
             <div class="container">
 
-                <!-- 第一行：左文字 + 右图片 -->
+
                 <div class="row align-items-center">
                     <div class="col-md-12 d-flex flex-column align-items-center">
 
-                        <!-- 上方图片（带 hover 提示框） -->
+
                         <div class="img-wrapper mb-3" style="max-width: 800px;">
                             <img src="static/assets/res0-img/img1.png" class="img-fluid fixed-img">
                             <div class="hover-tooltip">
@@ -341,9 +203,9 @@
                             </div>
                         </div>
 
-                        <!-- 下方文字 -->
+
                         <div class="main-body text-start w-100" id="research-p0-c-md">
-                            <!-- 这里放下方的文字内容 -->
+
                         </div>
 
                     </div>
@@ -359,13 +221,13 @@
 
             <div class="container">
                 <div class="row align-items-start">
-                    <!-- 左侧图片 -->
+
                     <div class="col-md-3 d-flex justify-content-center">
                         <img src="static/assets/res0-img/img2.png" class="img-fluid rounded shadow-sm"
                             alt="Related image">
                     </div>
 
-                    <!-- 右侧文字 -->
+
                     <div class="col-md-9">
                         <div class="main-body" id="">
                             <a class="fw-bold mb-2" href='https://pubs.acs.org/doi/10.1021/acs.est.3c05914'
@@ -385,8 +247,7 @@
             <hr>
 
 
-            <!-- Block 1 -->
-            <!-- 上方单独一行文字 -->
+
             <div class="row align-items-start">
                 <div class="col-12">
                     <div class="main-body" id="research-p1-md"></div>
@@ -395,11 +256,11 @@
 
             <div class="container">
 
-                <!-- 第一行：左文字 + 右图片 -->
+
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="main-body" id="research-p1-c-md">
-                            <!-- 上部文字 -->
+
                         </div>
                     </div>
 
@@ -416,7 +277,7 @@
 
                 </div>
 
-                <!-- 第二行：左图片 + 右文字 -->
+
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="img-wrapper">
@@ -429,7 +290,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="main-body" id="research-p1-d-md">
-                            <!-- 下部文字 -->
+
                         </div>
                     </div>
                 </div>
@@ -440,7 +301,7 @@
 
             <hr>
 
-            <!-- Block 2 -->
+
             <div class="row align-items-start">
                 <div class="col-12">
                     <div class="main-body" id="research-p2-md"></div>
@@ -449,11 +310,11 @@
 
             <div class="container">
 
-                <!-- 第一行：左文字 + 右图片 -->
+
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="main-body" id="research-p2-c-md">
-                            <!-- 上部文字 -->
+
                         </div>
                     </div>
 
@@ -470,7 +331,7 @@
 
                 </div>
 
-                <!-- 第二行：左图片 + 右文字 -->
+
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="img-wrapper">
@@ -485,7 +346,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="main-body" id="research-p2-d-md">
-                            <!-- 下部文字 -->
+
                         </div>
                     </div>
                 </div>
@@ -498,7 +359,7 @@
 
 
 
-    <!-- Awards -->
+
     <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="awards"
         style="padding-top: 1rem;padding-bottom: 1rem;">
         <div class="container px-5">
@@ -509,7 +370,7 @@
         </div>
         <div class="canvas-grid container px-5">
 
-            <!-- 左列 -->
+
             <div class="canvas-col">
                 <h4>Click for details</h4>
                 <div class="round-box" data-codefile="code/LYQ/2025-1/LYQ.r" data-codelang="r" data-text="Related : <a href='https://www.sciencedirect.com/science/article/pii/S0269749125012813' target='_blank'>Liao, Y.; Xiong, H.; Xiao, W.; Liu, J.; Xie, M.; Chen, R.; Tan, Q.-G. Refining marine metal biomonitoring through insights into allometry in green mussels. Environmental pollution. 2025, 383, 126908.</a> <br> 
@@ -573,7 +434,6 @@
 
 
 
-            <!-- 右列 -->
             <div class="canvas-col">
 
                 <div class="round-box" data-codefile="code/SQJ/2023-1/SQJ.r" data-codelang="r"
@@ -581,14 +441,14 @@
                         Data: <a href='code/SQJ/2023-1/R.P sediment exposure3.xlsx' download='R.P sediment exposure3.xlsx'>R.P sediment exposure3.xlsx</a>+
                         <a href='code/SQJ/2023-1/R.P_tissue metal concentration_µg_g.csv' download='R.P_tissue metal concentration_µg_g.csv'>R.P_tissue metal concentration_µg_g.csv</a>"
                     data-desc="The TKTD model successfully predicted nickel accumulation in
-                        <i>Ruditapes philippinarum</i>(a bivalve). The uncertainty of the prediction was
+                        <i>Ruditapes philippinarum</i> (a bivalve). The uncertainty of the prediction was
                         represented using Monte Carlo simulations. The solid color points and the error bars
                         represent the mean and standard deviation of tissue nickel concentrations of four replicate treatments, respectively. The curves are the predicted
                         tissue nickel concentrations (thin curves, n = 1000; bold black curves: average). The horizontal dot−dash lines indicate three times the background
                         clam tissue nickel concentration.">
                     <img src="code/SQJ/2023-1/SQJ.png" alt="2">
                     <div class="round-box-caption">The TKTD model successfully predicted nickel accumulation in
-                        <i>Ruditapes philippinarum</i>(a bivalve). The uncertainty of the prediction was
+                        <i>Ruditapes philippinarum</i> (a bivalve). The uncertainty of the prediction was
                         represented using Monte Carlo simulations.
                     </div>
                 </div>
@@ -726,27 +586,6 @@
 
 <script type="text/javascript" src="static/js/click.js"></script>
 
-<script>
-    // Block 1 动态文字
-    const carouselP1 = document.getElementById('carouselP1');
-    const p1Text = document.getElementById('research-p1-extra-text');
-
-    carouselP1.addEventListener('slid.bs.carousel', function (event) {
-        const activeItem = event.relatedTarget;
-        const caption = activeItem.getAttribute('data-caption') || '';
-        p1Text.textContent = caption;
-    });
-
-    // Block 2 动态文字
-    const carouselP2 = document.getElementById('carouselP2');
-    const p2Text = document.getElementById('research-p2-extra-text');
-
-    carouselP2.addEventListener('slid.bs.carousel', function (event) {
-        const activeItem = event.relatedTarget;
-        const caption = activeItem.getAttribute('data-caption') || '';
-        p2Text.textContent = caption;
-    });
-</script>
 
 
 </html>
