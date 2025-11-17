@@ -5,4 +5,4 @@ B.Sc., Environmental Science, Xiamen University, 2019–2023.
 
 #### Research Interests
 
-Coastal Metal Ecotoxicology, Heavy Metal Toxicity Assessment, and Environmental Health Risk.
+Coastal Metal Ecotoxicology, Metal Toxicity Assessment, and Environmental Health Risk.
