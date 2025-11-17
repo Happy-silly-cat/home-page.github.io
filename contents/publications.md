@@ -1,7 +1,7 @@
 #### Under review
 
-- **<u>Xiao, W.</u>**; Simpson, S. L; Tan,Q.-G.; Xie, M. Mechanistic acute-to-chronic extrapolation through sediment toxicokinetic-toxicodynamic modeling. (*Eviron. Sci. Technol.*)
-- Lin Z.; **<u>Xiao, W.</u>**; Tan, Q.-G.; Simpson, S. L; Chen, R.; Wang, W.-X.; Xie, M. Advancing toxicokinetic-toxicodynamic modeling to assess kinetic bioavailability in sediment. (*Eviron. Sci. Technol.*)
+- **<u>Xiao, W.</u>**; Simpson, S. L; Tan,Q.-G.; Xie, M. Mechanistic acute-to-chronic extrapolation through sediment toxicokinetic-toxicodynamic modeling. 2025. (*Eviron. Sci. Technol.*) <a href='../static/assets/doc/Xiao et al. Mechanistic ACR derivation.pdf' target="_blank">[Paper]</a>
+- Lin Z.; **<u>Xiao, W.</u>**; Tan, Q.-G.; Simpson, S. L; Chen, R.; Wang, W.-X.; Xie, M. Advancing toxicokinetic-toxicodynamic modeling to assess kinetic bioavailability in sediment. 2025. (*Eviron. Sci. Technol.*)<a href='../static/assets/doc/Lin et al. Sediment TKTD model development.pdf' target="_blank">[Paper]</a>
 
 #### Published
 
