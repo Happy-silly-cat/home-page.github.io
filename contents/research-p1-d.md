@@ -1,1 +1,5 @@
-Based on **<u>10-day sediment toxicity tests</u>** and **<u>10-day aqueous toxicity tests</u>**, we determined the parameters of the TKTD model and subsequently predicted the long-term metal accumulation and toxicity (LC50) of organisms in sediment environments.
+My research develops a mechanistic ACR framework, where:
+
+- 10-day sediment and aqueous toxicity experiments are used to parameterize TKTD models;
+- long-term no-effect concentrations (NECs) and LC50 values are predicted mechanistically, rather than inferred empirically.
+

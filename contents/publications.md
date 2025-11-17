@@ -5,7 +5,7 @@
 
 #### Published
 
-- Su, Q.; **<u>Xiao, W.</u>**; Simpson, S. L.; Tan, Q.-G.; Chen, R.; Xie, M. Enhancing sediment bioaccumulation predictions: isotopically modified bioassay and biodynamic modeling for nickel assessment. *Eviron. Sci. Technol*. 2023, 57 (48), 19352–19362. [[Paper]](https://pubs.acs.org/doi/abs/10.1021/acs.est.3c05914)
+- Su, Q.; **<u>Xiao, W.</u>**; Simpson, S. L.; Tan, Q.-G.; Chen, R.; Xie, M. Enhancing sediment bioaccumulation predictions: isotopically modified bioassay and biodynamic modeling for nickel assessment. *Eviron. Sci. Technol*. 2023, 57 (48), 19352–19362. [[Paper]](https://pubs.acs.org/doi/abs/10.1021/acs.est.3c05914) (**Bachelor’s thesis work**)
 - Ma, X.; **<u>Xiao, W.</u>**; Zhang, Q.; Yu, Z.; Jia, X.; Chen, R.; Xie, M.; Tan, Q.-G. Fast in, faster out: rapid thallium elimination drives low bioaccumulation in coastal gastropods. *Eviron. Sci. Technol*. 2025, 59 (30), 15720–15729. [[Paper]](https://pubs.acs.org/doi/10.1021/acs.est.5c04432) 
 - Xu, D.; Xiong, H.; Wu, Q.; **<u>Xiao, W.</u>**; Simpson, S. L.; Tan, Q.-G.; Chen, R.; Xie, M. Sediment ballet: unveiling the dynamics of metal bioavailability in sediments following resuspension and reequilibration. *Eviron. Sci. Technol*. 2024, 58 (51), 22755–22765. [[Paper]](https://pubs.acs.org/doi/10.1021/acs.est.4c08327)
 - Wang, N.; Hu, H.; **<u>Xiao, W.</u>**; Tan, Q.-G.; Chen, R.; Xie, M.; Simpson, S. L. Hydrodynamic perturbations on contaminant behavior in low-permeability sediments: porewater metal dynamics and risk assessment implications. *Eviron. Pollut*. 2025, 377, 126466.[[Paper]](https://www.sciencedirect.com/science/article/pii/S0269749125008395)

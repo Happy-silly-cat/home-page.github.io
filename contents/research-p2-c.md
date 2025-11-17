@@ -1,1 +1,14 @@
-the bioaccumulation rate is quantitatively defined as the difference between the uptake rate and the elimination rate. The influence of environmental factors on bioaccumulation is reflected by the variation of model parameters. **<u>To accurately determine these parameters, we employed isotope tracing techniques</u>**, using different isotopes to clearly distinguish between the uptake and elimination processes.
+Bioaccumulation depends on the balance between uptake and elimination, and salinity changes can shift this balance in complex ways. This process can be explicitly resolved and interpreted through modeling. 
+
+TK modeling, combined with a novel stable-isotope tracing technique, allows us to separate and quantify:
+
+- uptake from water,
+- uptake from sediments,
+- and elimination over time.
+
+
+
+
+
+
+

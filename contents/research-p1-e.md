@@ -1,1 +1,1 @@
-Based on the predicted no-effect concentration (NEC) and LC50, the ACR can be calculated. This approach can be extended to **<u>different organisms, environmental conditions, and pollutants.</u>**
+Model-derived NECs and LC50 allow for calculating ACRs. This approach can be extended across species, environmental conditions, and metal contaminants, providing a more reliable basis for sediment quality guideline development.

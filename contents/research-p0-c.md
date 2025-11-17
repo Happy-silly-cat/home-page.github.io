@@ -1,5 +1,8 @@
-**<u>Conventional toxicity tests</u>** generally focus only on endpoint such as LC50 or EC50, and describe dose–response relationships based on experimental results. These tests are time-consuming, and their outcomes are not easily extrapolated or interpreted.
+Unlike traditional toxicity tests—which provide only static endpoints (LC50 or EC50)—TKTD models:
 
-**<u>The TKTD model</u>** describes the dynamic process of toxicity over time, once the model parameters are determined from **<u>short-term experiments</u>**, it can reasonably predict toxicity at different time points, including long-term biological effects that are difficult to assess with conventional toxicity tests.
+- incorporate time-dependent exposure and hazard,
+- reduce reliance on long and costly chronic toxicity tests,
+- and can extrapolate short-term data to predict long-term biological effects.
 
-The successful applications of the model in sediments can be found in the **<u>Publication below</u>**.
+The successful applications of the model in sediments can be found in the Publication below.
+

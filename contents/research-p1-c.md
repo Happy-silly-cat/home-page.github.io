@@ -1,6 +1,6 @@
-The **<u>acute-to-chronic ratio (ACR)</u>** is a parameter that allows researchers to estimate chronic toxicity values from short-term acute tests.
+The acute-to-chronic ratio (ACR) is widely used to estimate chronic toxicity from short-term acute tests.
 
-In the past, ACR values were often derived from extensive toxicity test results and empirical estimations.
+conventional ACRs are often derived empirically by comparing acute  and chronic datasets from different studies, often involving mismatched species, endpoints, chemicals, or test conditions.
 
 
 
