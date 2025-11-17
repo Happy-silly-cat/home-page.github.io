@@ -2,4 +2,4 @@
 
 **<u>The TKTD model</u>** describes the dynamic process of toxicity over time, once the model parameters are determined from **<u>short-term experiments</u>**, it can reasonably predict toxicity at different time points, including long-term biological effects that are difficult to assess with conventional toxicity tests.
 
-The successful applications of the model in sediments can be found in the **<u>Reference below</u>**.
+The successful applications of the model in sediments can be found in the **<u>Publication below</u>**.
